@@ -14,7 +14,7 @@
   <div class="site-frame">
     <header class="site-header">
       <a class="wordmark" href="index.html" aria-label="AyT Group inicio">
-        <span class="wordmark-mark">AyT</span>
+        <img class="wordmark-logo" src="img/logo-ayt-principal.png" alt="AyT Group" />
         <span class="wordmark-copy">
           <strong>GROUP</strong>
           <small>Ingenieria, salud y comunidad</small>
@@ -22,9 +22,27 @@
       </a>
 
       <nav class="site-nav" aria-label="Navegacion principal">
-        <a href="ingenieria.html">Ingenieria</a>
-        <a href="club-deportivo.html">Club Deportivo</a>
-        <a href="salud-360.html">Salud 360</a>
+        <div class="site-nav-pillars">
+          <div class="site-pillar">
+            <button class="site-pillar-btn" onclick="location.href='ingenieria.html'">Área Técnica</button>
+            <div class="site-subnav">
+              <a href="index.html">Inicio</a>
+              <a href="ingenieria.html">Ingeniería</a>
+            </div>
+          </div>
+          <div class="site-pillar">
+            <button class="site-pillar-btn" onclick="location.href='club-deportivo.html'">Área de Salud y Bienestar</button>
+            <div class="site-subnav">
+              <a href="club-deportivo.html">Club Deportivo</a>
+              <a href="salud-360.html">Salud 360</a>
+              <a href="fundacion.html">Fundación</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-nav-links">
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
       </nav>
     </header>
 
@@ -52,12 +70,15 @@
                 <h2>Desarrollo deportivo, salud y comunidad</h2>
               </div>
               <div class="poster-cell poster-photo">
+                <img src="img/ingenieria-proyecto-1.jpg" alt="Proyecto de infraestructura" />
                 <span>Infraestructura que impacta</span>
               </div>
               <div class="poster-cell poster-photo poster-photo-alt">
+                <img src="img/index-salud.jpg" alt="Salud y bienestar" />
                 <span>Salud que transforma</span>
               </div>
               <div class="poster-cell poster-photo poster-photo-third">
+                <img src="img/index-fundacion.jpg" alt="Comunidad e inclusión" />
                 <span>Comunidad que incluye</span>
               </div>
             </div>
@@ -67,6 +88,7 @@
 
       <section class="strip-grid">
         <article class="strip-card">
+          <img class="strip-icon" src="img/Logo_FDN_Karate_Chile.png" alt="AyT Ingeniería" />
           <span class="strip-number">1</span>
           <p class="strip-label">Proyectos de infraestructura</p>
           <h2>Ingenieria y proyectos</h2>
@@ -77,6 +99,7 @@
         </article>
 
         <article class="strip-card">
+          <img class="strip-icon" src="img/logo-karate-dorado.jpg" alt="Club Deportivo" />
           <span class="strip-number">2</span>
           <p class="strip-label">Formacion e inclusion</p>
           <h2>Club Deportivo y Bienestar AyT</h2>
@@ -87,6 +110,7 @@
         </article>
 
         <article class="strip-card">
+          <img class="strip-icon" src="img/salud360-logo-1.png" alt="Salud 360" />
           <span class="strip-number">3</span>
           <p class="strip-label">Deportes, salud y bienestar</p>
           <h2>Salud Integral 360</h2>
@@ -156,6 +180,30 @@
         </div>
       </section>
     </main>
+
+    <div class="floating-social">
+      <div class="floating-menu" id="floatingMenu">
+        <a class="floating-link whatsapp" href="https://wa.me/56951998131" target="_blank" title="WhatsApp">📱</a>
+        <a class="floating-link instagram" href="https://instagram.com/ayt.group" target="_blank" title="Instagram">📷</a>
+        <a class="floating-link facebook" href="https://facebook.com/aytgroup" target="_blank" title="Facebook">📘</a>
+      </div>
+      <button class="floating-toggle" id="floatingToggle" title="Redes sociales">+</button>
+    </div>
   </div>
+
+  <script>
+    document.getElementById('floatingToggle').addEventListener('click', function() {
+      this.classList.toggle('is-active');
+      document.getElementById('floatingMenu').classList.toggle('is-open');
+    });
+  </script>
+  <footer class="site-footer">
+    <div class="footer-logos">
+      <img src="img/logo-ayt-principal.png" alt="AyT Group" class="footer-logo" />
+      <img src="img/Logo_FDN_Karate_Chile.png" alt="Federación" class="footer-logo" />
+      <img src="img/logo-fundacion-1.jpg" alt="Fundación" class="footer-logo" />
+    </div>
+    <p class="footer-copy">&copy; 2026 AyT Group. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>

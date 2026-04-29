@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AyT Group | Contacto</title>
+  <meta
+    name="description"
+    content="Contacta AyT Group: ingenieria, salud integral, club deportivo y fundacion. Estamos listos para ayudarte."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="site-body">
+  <div class="site-frame">
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="AyT Group inicio">
+        <img class="wordmark-logo" src="img/logo-ayt-principal.png" alt="AyT Group" />
+        <span class="wordmark-copy">
+          <strong>GROUP</strong>
+          <small>Ingenieria, salud y comunidad</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegacion principal">
+        <div class="site-nav-pillars">
+          <div class="site-pillar">
+            <button class="site-pillar-btn" onclick="location.href='ingenieria.html'">Área Técnica</button>
+            <div class="site-subnav">
+              <a href="index.html">Inicio</a>
+              <a href="ingenieria.html">Ingeniería</a>
+            </div>
+          </div>
+          <div class="site-pillar">
+            <button class="site-pillar-btn" onclick="location.href='club-deportivo.html'">Área de Salud y Bienestar</button>
+            <div class="site-subnav">
+              <a href="club-deportivo.html">Club Deportivo</a>
+              <a href="salud-360.html">Salud 360</a>
+              <a href="fundacion.html">Fundación</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-nav-links">
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="page-copy">
+          <p class="kicker">Contacto</p>
+          <h1>Estamos listos para ayudarte.</h1>
+          <p class="lead">
+            Elige el area de tu interes y escribenos. Te respondemos a la brevedad.
+          </p>
+        </div>
+
+        <aside class="page-visual">
+          <div class="angled-poster">
+            <div class="poster-grid">
+              <div class="poster-cell poster-brand">
+                <span class="poster-tag">Contactanos</span>
+                <h2>AyT Group</h2>
+              </div>
+              <div class="poster-cell poster-photo">
+                <span>Area Tecnica</span>
+              </div>
+              <div class="poster-cell poster-photo-alt">
+                <span>Salud y Bienestar</span>
+              </div>
+              <div class="poster-cell poster-photo-third">
+                <span>Comunidad</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="split-panel">
+        <article>
+          <p class="kicker">Canales de contacto</p>
+          <h2>Cómo contactarnos</h2>
+          <p>
+            Estamos disponibles para resolver tus consultas sobre proyectos de infraestructura, servicios de salud integral y inscripciones al club deportivo.
+          </p>
+          <ul class="detail-list">
+            <li><strong>Telefono:</strong> +56 9 5199 8131</li>
+            <li><strong>WhatsApp:</strong> +56 9 9130 4738</li>
+            <li><strong>Email:</strong> contacto@aytgroup.cl</li>
+            <li><strong>Instagram:</strong> @ayt.group</li>
+          </ul>
+        </article>
+
+        <article class="metric-box">
+          <div class="metric">
+            <span class="metric-tag">Direccion</span>
+            <strong>Felix Weingartner 2303</strong>
+            <p>Pedro Aguirre Cerda, Santiago.</p>
+          </div>
+          <div class="metric">
+            <span class="metric-tag">Horario</span>
+            <strong>Atencion</strong>
+            <p>Lunes a viernes de 9:00 a 19:00 hrs.</p>
+          </div>
+          <div class="metric">
+            <span class="metric-tag">Area</span>
+            <strong>Selecciona</strong>
+            <p>El area de tu interes para una atencion mas precisa.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="form-section">
+        <div class="form-shell">
+          <div class="form-panel">
+            <p class="kicker">Envíanos un mensaje</p>
+            <h3>Formulario de contacto</h3>
+            <p>
+              Selecciona el area de tu interes y te conectamos con el equipo adecuado.
+            </p>
+
+            <form class="form-grid" action="#" method="post">
+              <div class="field">
+                <label for="name">Nombre y apellido</label>
+                <input id="name" name="name" type="text" placeholder="Tu nombre completo" />
+              </div>
+              <div class="field">
+                <label for="phone">Telefono / WhatsApp</label>
+                <input id="phone" name="phone" type="tel" placeholder="+56 9 1234 5678" />
+              </div>
+              <div class="field">
+                <label for="email">Correo electronico</label>
+                <input id="email" name="email" type="email" placeholder="correo@dominio.cl" />
+              </div>
+              <div class="field">
+                <label for="area">Area de interes</label>
+                <select id="area" name="area">
+                  <option>Ingenieria y Proyectos</option>
+                  <option>Club Deportivo</option>
+                  <option>Salud 360</option>
+                  <option>Fundacion El Mundo de Amalia</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+              </div>
+            </form>
+
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">Enviar mensaje</button>
+            </div>
+          </div>
+
+          <aside class="form-note">
+            <p class="card-kicker">Que recibes</p>
+            <h3>Respuesta personalizada</h3>
+            <ul>
+              <li>respuesta en 24-48 horas</li>
+              <li>Orientacion segun tu necesidad</li>
+              <li>Coordinacion de reunion o atencion</li>
+              <li>Seguimiento de tu solicitud</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <p class="kicker">Próximo paso</p>
+        <h2>Se parte de nuestra comunidad. Elige el area de tu interes.</h2>
+        <div class="action-row">
+          <a class="button button-primary" href="ingenieria.html">Área Técnica</a>
+          <a class="button button-outline" href="club-deportivo.html">Club Deportivo</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="floating-social">
+      <div class="floating-menu" id="floatingMenu">
+        <a class="floating-link whatsapp" href="https://wa.me/56951998131" target="_blank" title="WhatsApp">📱</a>
+        <a class="floating-link instagram" href="https://instagram.com/ayt.group" target="_blank" title="Instagram">📷</a>
+        <a class="floating-link facebook" href="https://facebook.com/aytgroup" target="_blank" title="Facebook">📘</a>
+      </div>
+      <button class="floating-toggle" id="floatingToggle" title="Redes sociales">+</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('floatingToggle').addEventListener('click', function() {
+      this.classList.toggle('is-active');
+      document.getElementById('floatingMenu').classList.toggle('is-open');
+    });
+  </script>
+  <footer class="site-footer">
+    <div class="footer-logos">
+      <img src="img/logo-ayt-principal.png" alt="AyT Group" class="footer-logo" />
+      <img src="img/Logo_FDN_Karate_Chile.png" alt="Federación" class="footer-logo" />
+      <img src="img/logo-fundacion-1.jpg" alt="Fundación" class="footer-logo" />
+    </div>
+    <p class="footer-copy">&copy; 2026 AyT Group. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
