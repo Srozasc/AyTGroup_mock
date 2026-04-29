@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyT Group - Ingeniería y Construcción | Salud y Bienestar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;510;590&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-marketing: #08090a;
+            --bg-panel: #0f1011;
+            --bg-surface: #191a1b;
+            --bg-elevated: #28282c;
+            
+            --text-primary: #f7f8f8;
+            --text-secondary: #d0d6e0;
+            --text-tertiary: #8a8f98;
+            --text-quaternary: #62666d;
+            
+            --brand-navy: #1a3a5c;
+            --brand-navy-light: #2a4a6c;
+            --brand-gold: #c4a035;
+            --brand-gold-light: #d4b045;
+            --accent-olive: #4a5d23;
+            --accent-olive-light: #5a6d33;
+            
+            --border-subtle: rgba(255,255,255,0.05);
+            --border-standard: rgba(255,255,255,0.08);
+            
+            --btn-ghost: rgba(255,255,255,0.02);
+            --btn-subtle: rgba(255,255,255,0.04);
+            
+            --font-family: 'Inter Variable', 'Inter', -apple-system, system-ui, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--bg-marketing);
+            color: var(--text-secondary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--bg-panel);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 590;
+            font-size: 18px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--brand-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 590;
+            color: var(--brand-gold);
+            border: 2px solid var(--brand-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 510;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 510;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--brand-gold) 100%);
+            color: var(--text-primary);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2a2a2a 0%, var(--brand-gold-light) 100%);
+        }
+
+        .btn-navy {
+            background: var(--brand-navy);
+            color: var(--text-primary);
+        }
+
+        .btn-navy:hover {
+            background: var(--brand-navy-light);
+        }
+
+        .btn-ghost {
+            background: var(--btn-ghost);
+            border: 1px solid var(--border-standard);
+            color: var(--text-primary);
+        }
+
+        .btn-ghost:hover {
+            background: var(--btn-subtle);
+        }
+
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 510;
+            line-height: 1.1;
+            letter-spacing: -1.2px;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-tertiary);
+            max-width: 540px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        section {
+            padding: 64px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 510;
+            line-height: 1.1;
+            letter-spacing: -0.8px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--text-tertiary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .unit-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .unit-card:hover {
+            border-color: var(--brand-gold);
+        }
+
+        .unit-card .unit-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(196, 160, 53, 0.15);
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 510;
+            color: var(--brand-gold);
+            margin-bottom: 20px;
+        }
+
+        .unit-card h3 {
+            font-size: 28px;
+            font-weight: 590;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .unit-card > p {
+            font-size: 15px;
+            color: var(--text-tertiary);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .unit-services {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .unit-services li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .unit-services li:last-child {
+            border-bottom: none;
+        }
+
+        .unit-services li::before {
+            content: "→";
+            color: var(--brand-gold);
+            font-size: 12px;
+        }
+
+        .orgs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .org-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .org-logo {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--brand-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            font-weight: 590;
+            color: var(--text-primary);
+            border: 2px solid var(--brand-gold);
+        }
+
+        .org-card h3 {
+            font-size: 18px;
+            font-weight: 590;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .org-card p {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-bottom: 16px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .team-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .team-avatar {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--brand-navy) 0%, var(--accent-olive) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
+            font-weight: 590;
+            color: var(--text-primary);
+        }
+
+        .team-card h4 {
+            font-size: 15px;
+            font-weight: 590;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .team-card .role {
+            font-size: 13px;
+            font-weight: 510;
+            color: var(--brand-gold);
+            margin-bottom: 8px;
+        }
+
+        .team-card .credentials {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            line-height: 1.5;
+        }
+
+        .team-avatar {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--brand-navy) 0%, var(--accent-olive) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
+            font-weight: 590;
+            color: var(--text-primary);
+            display: none;
+        }
+
+        .org-logo {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--brand-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            font-weight: 590;
+            color: var(--text-primary);
+            border: 2px solid var(--brand-gold);
+            display: none;
+        }
+
+        .team-card .team-img,
+        .org-card .org-img {
+            display: block;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 16px;
+            border: 2px solid var(--brand-gold);
+        }
+
+        .team-card .team-img {
+            width: 56px;
+            height: 56px;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 32px;
+            border: 1px solid var(--border-standard);
+        }
+
+        .unit-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-standard);
+        }
+
+        .pricing-simple {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .price-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 32px 40px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .price-card.featured {
+            border-color: var(--brand-gold);
+            background: rgba(196, 160, 53, 0.05);
+        }
+
+        .price-card h3 {
+            font-size: 16px;
+            font-weight: 590;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .price-card .price {
+            font-size: 32px;
+            font-weight: 590;
+            color: var(--text-primary);
+        }
+
+        .price-card .price span {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-tertiary);
+        }
+
+        .price-card .desc {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin: 8px 0 16px;
+        }
+
+        .contact-form {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 510;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-marketing);
+            border: 1px solid var(--border-standard);
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--text-primary);
+            font-family: var(--font-family);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brand-gold);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--brand-gold) 100%);
+            color: var(--text-primary);
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 590;
+            cursor: pointer;
+        }
+
+        .form-submit:hover {
+            background: linear-gradient(135deg, #2a2a2a 0%, var(--brand-gold-light) 100%);
+        }
+
+        footer {
+            background: var(--bg-panel);
+            border-top: 1px solid var(--border-subtle);
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: var(--text-quaternary);
+        }
+
+        @media (max-width: 1024px) {
+            .units-grid,
+            .orgs-grid,
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Floating Social Buttons */
+        .floating-social {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+.social-btn {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-standard);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .social-btn i {
+            font-size: 18px;
+        }
+
+        .social-toggle {
+            width: 48px;
+            height: 48px;
+            background: var(--brand-navy);
+            border: 1px solid var(--brand-navy-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            font-family: var(--font-family);
+        }
+
+        .social-toggle i {
+            font-size: 18px;
+        }
+
+        .social-btn:hover {
+            background: var(--brand-gold);
+            border-color: var(--brand-gold);
+            transform: scale(1.1);
+        }
+
+        .social-toggle {
+            width: 48px;
+            height: 48px;
+            background: var(--brand-navy);
+            border: 1px solid var(--brand-navy-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            font-family: var(--font-family);
+        }
+
+        .social-toggle:hover {
+            background: var(--brand-navy-light);
+        }
+
+        .social-toggle.active {
+            background: var(--brand-gold);
+            border-color: var(--brand-gold);
+            transform: rotate(45deg);
+        }
+
+        .social-menu {
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-menu.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .floating-social {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .social-btn,
+            .social-toggle {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+
+            .units-grid,
+            .orgs-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-simple {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .unit-img {
+                height: 140px;
+            }
+
+            .hero-img {
+                max-height: 200px;
+                margin-top: 24px;
+            }
+
+            .org-card .org-img,
+            .team-card .team-img {
+                width: 56px;
+                height: 56px;
+            }
+
+            .team-card .team-img {
+                width: 48px;
+                height: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <div class="logo-mark">A</div>
+                AyT Group
+            </a>
+            <div class="nav-links">
+                <a href="#ingenieria" class="nav-link">Ingeniería</a>
+                <a href="#bienestar" class="nav-link">Salud y Bienestar</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#fundacion" class="nav-link">Fundación</a>
+                <a href="#contacto" class="btn btn-primary">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Ingeniería que construye hogares, Bienestar que transforma vidas</h1>
+            <p class="hero-subtitle">AyT Group integra dos pilares fundamentales: soluciones de ingeniería y construcción con salud integral, bienestar y artes marciales inclusivas.</p>
+            <div class="hero-cta">
+                <a href="#ingenieria" class="btn btn-navy">Proyecto de Ingeniería</a>
+                <a href="#contacto" class="btn btn-ghost">Únete al Club</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="unidades">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestras Unidades de Negocio</h2>
+                <p>Dos áreas complementarias para satisfacer tus necesidades</p>
+            </div>
+            <div class="units-grid">
+                <div class="unit-card" id="ingenieria">
+                    <img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/FB_IMG_1773182698260.jpg" alt="Ingeniería" class="unit-img">
+                    <span class="unit-badge">Unidad Técnica</span>
+                    <h3>Ingeniería y Construcción</h3>
+                    <p>Proyectos de infraestructura, regularizaciones y edificación con estándares de seguridad y normativa vigente.</p>
+                    <ul class="unit-services">
+                        <li>Regularizaciones DOM</li>
+                        <li>Proyectos de Edificación</li>
+                        <li>Remodelaciones</li>
+                        <li>Mantención de Comunidades</li>
+                    </ul>
+                </div>
+                <div class="unit-card" id="bienestar">
+                    <img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG-20260426-WA0122.jpg" alt="Salud y Bienestar" class="unit-img">
+                    <span class="unit-badge">Salud y Bienestar</span>
+                    <h3>Salud y Bienestar Integral</h3>
+                    <p>Atención multidisciplinaria, artes marciales inclusivas y programas de formación personal.</p>
+                    <ul class="unit-services">
+                        <li>Kinesiología</li>
+                        <li>Nutrición</li>
+                        <li>Psicología</li>
+                        <li>Artes Marciales Inclusivas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="organizaciones">
+        <div class="container">
+            <div class="section-header">
+                <h2>Organizaciones Relacionadas</h2>
+                <p>Rede de aliados estratégicos y proyectos sociales</p>
+            </div>
+            <div class="orgs-grid">
+                <div class="org-card" id="fundacion">
+                    <img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/FB_IMG_1774811894923.jpg" alt="Fundación El Mundo de Amalia" class="org-img">
+                    <h3>Fundación El Mundo de Amalia</h3>
+                    <p>Apoyo terapéutico para niños y jóvenes neurodivergentes y sus familias.</p>
+                    <a href="#contacto" class="btn btn-ghost">Conocer más</a>
+                </div>
+                <div class="org-card">
+                    <img src="../imagenes/Equipo y Actividades/Club Deportivo y de Bienestar AyT/IMG_20260403_132454.jpg" alt="Club Deportivo AyT" class="org-img">
+                    <h3>Club Deportivo AyT</h3>
+                    <p>Programas deportivos inclusivos, artes marciales y bienestar comunitario.</p>
+                    <a href="#contacto" class="btn btn-ghost">Inscribirse</a>
+                </div>
+                <div class="org-card">
+                    <img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/FB_IMG_1775279361425.jpg" alt="FENAMDI Chile" class="org-img">
+                    <h3>FENAMDI Chile</h3>
+                    <p>Federación Nacional de Artes Marciales y Deportes Inclusivos.</p>
+                    <a href="#contacto" class="btn btn-ghost">Registrar Instructor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestro Equipo</h2>
+                <p>Profesionales especializados al servicio de tu bienestar</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="../imagenes/Equipo y Actividades/Salud 360/IMG_20260422_185406.jpg" alt="Sebastián Atal" class="team-img">
+                    <h4>Sebastián Atal</h4>
+                    <p class="role">Director General</p>
+                    <p class="credentials">Constructor Civil PUC<br>SABOMNIM 4º Dan<br>Coach WKF</p>
+                </div>
+                <div class="team-card">
+                    <img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0349.jpg" alt="Equipo de Salud" class="team-img">
+                    <h4>Kinesióloga</h4>
+                    <p class="role">Kinesiología</p>
+                    <p class="credentials">Biomecánica<br>Rehabilitación</p>
+                </div>
+                <div class="team-card">
+                    <img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0357.jpg" alt="Nutricionista" class="team-img">
+                    <h4>Nutricionista</h4>
+                    <p class="role">Nutrición</p>
+                    <p class="credentials">Nutrición Deportiva<br>Nutrición Clínica</p>
+                </div>
+                <div class="team-card">
+                    <img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0362.jpg" alt="Psicología" class="team-img">
+                    <h4>Psicólogo/a</h4>
+                    <p class="role">Psicología</p>
+                    <p class="credentials">Psicología del Deporte<br>Coaching</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="membresias">
+        <div class="container">
+            <div class="section-header">
+                <h2>Planes y Membresías</h2>
+                <p>Elige la opción que mejor se adapte a ti</p>
+            </div>
+            <div class="pricing-simple">
+                <div class="price-card">
+                    <h3>Consultas</h3>
+                    <div class="price">$35.000<span>/sesión</span></div>
+                    <p class="desc">Salud integral</p>
+                    <a href="#contacto" class="btn btn-ghost">Agendar</a>
+                </div>
+                <div class="price-card">
+                    <h3>Plan Formativo</h3>
+                    <div class="price">$45.000<span>/mes</span></div>
+                    <p class="desc">Programa inclusivo</p>
+                    <a href="#contacto" class="btn btn-ghost">Inscribirse</a>
+                </div>
+                <div class="price-card featured">
+                    <h3>Pack Bienestar</h3>
+                    <div class="price">$110.000<span>/mes</span></div>
+                    <p class="desc">Acceso completo</p>
+                    <a href="#contacto" class="btn btn-primary">Inscribirse</a>
+                </div>
+                <div class="price-card">
+                    <h3>Adultos</h3>
+                    <div class="price">$55.000<span>/mes</span></div>
+                    <p class="desc">Karate / SBD</p>
+                    <a href="#contacto" class="btn btn-ghost">Inscribirse</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contáctanos</h2>
+                <p>Cuéntanos cómo podemos ayudarte</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre completo *</label>
+                            <input type="text" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono *</label>
+                            <input type="tel" placeholder="+56 9 XXXX XXXX" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" placeholder="correo@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Área de interés *</label>
+                            <select required>
+                                <option value="">Selecciona...</option>
+                                <option value="ingenieria">Ingeniería y Construcción</option>
+                                <option value="salud">Salud y Bienestar</option>
+                                <option value="club">Club Deportivo</option>
+                                <option value="instructor">Instructor FENAMDI</option>
+                                <option value="fundacion">Fundación</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea placeholder="Cuéntanos sobre tu proyecto o consulta..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">Inicio</a>
+                <a href="#ingenieria">Ingeniería</a>
+                <a href="#bienestar">Salud</a>
+                <a href="#nosotros">Equipo</a>
+                <a href="#fundacion">Fundación</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <p class="footer-copy">© 2026 AyT Group. Ingeniería que construye hogares, Bienestar que transforma vidas.</p>
+        </div>
+    </footer>
+
+    <div class="floating-social">
+        <div class="social-menu" id="socialMenu">
+            <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/56912345678" target="_blank" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="social-toggle" id="socialToggle" onclick="toggleSocialMenu()"><i class="fas fa-plus"></i></div>
+    </div>
+
+    <script>
+        function toggleSocialMenu() {
+            const menu = document.getElementById('socialMenu');
+            const toggle = document.getElementById('socialToggle');
+            menu.classList.toggle('show');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
