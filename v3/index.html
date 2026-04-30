@@ -694,6 +694,144 @@
             display: flex;
         }
 
+        /* Carousel Styles */
+        .carousel-section {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--border-standard);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: rgba(0,0,0,0.6);
+            border: none;
+            border-radius: 50%;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: var(--brand-gold);
+        }
+
+        .carousel-nav.prev {
+            left: 12px;
+        }
+
+        .carousel-nav.next {
+            right: 12px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--brand-gold);
+            transform: scale(1.2);
+        }
+
+        .unit-card .carousel-section {
+            margin-bottom: 0;
+        }
+
+        .org-card .carousel-section {
+            margin-bottom: 16px;
+        }
+
+        .org-card .carousel-container {
+            border-radius: 8px;
+        }
+
+        .org-card .carousel-slide img {
+            height: 140px;
+        }
+
+        .team-card .carousel-section {
+            margin-bottom: 0;
+        }
+
+        .team-card .carousel-container {
+            border-radius: 8px;
+            border: 2px solid var(--brand-gold);
+        }
+
+        .team-card .carousel-slide img {
+            height: 100px;
+        }
+
+        .team-card .carousel-nav {
+            width: 28px;
+            height: 28px;
+            font-size: 12px;
+        }
+
+        .team-card .carousel-nav.prev {
+            left: 6px;
+        }
+
+        .team-card .carousel-nav.next {
+            right: 6px;
+        }
+
+        .team-card .carousel-dots {
+            bottom: 6px;
+        }
+
+        .team-card .carousel-dot {
+            width: 6px;
+            height: 6px;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -800,7 +938,23 @@
             </div>
             <div class="units-grid">
                 <div class="unit-card" id="ingenieria">
-                    <img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/FB_IMG_1773182698260.jpg" alt="Ingeniería" class="unit-img">
+                    <div class="carousel-section" data-carousel="unidades-ingenieria">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/FB_IMG_1773182698260.jpg" alt="Ingeniería 1"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/IMG_20260220_164123.jpg" alt="Ingeniería 2"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/IMG_20260220_163442.jpg" alt="Ingeniería 3"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/IMG_20260220_162924.jpg" alt="Ingeniería 4"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/IMG_20260220_162458.jpg" alt="Ingeniería 5"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/IMG-20260320-WA0069.jpg" alt="Ingeniería 6"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/IMG_20260227_185149.jpg" alt="Ingeniería 7"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/FB_IMG_1771538386776.jpg" alt="Ingeniería 8"></div>
+                            </div>
+                            <button class="carousel-nav prev">‹</button>
+                            <button class="carousel-nav next">›</button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
                     <span class="unit-badge">Unidad Técnica</span>
                     <h3>Ingeniería y Construcción</h3>
                     <p>Proyectos de infraestructura, regularizaciones y edificación con estándares de seguridad y normativa vigente.</p>
@@ -812,7 +966,21 @@
                     </ul>
                 </div>
                 <div class="unit-card" id="bienestar">
-                    <img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG-20260426-WA0122.jpg" alt="Salud y Bienestar" class="unit-img">
+                    <div class="carousel-section" data-carousel="unidades-bienestar">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/69bf5f13-5889-4b65-a5de-2f863e1e7b79.jpeg" alt="Bienestar 1"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0349.jpg" alt="Bienestar 2"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0357.jpg" alt="Bienestar 3"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0362.jpg" alt="Bienestar 4"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/IMG_20260423_185406.jpg" alt="Bienestar 5"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG-20260426-WA0122.jpg" alt="Bienestar 6"></div>
+                            </div>
+                            <button class="carousel-nav prev">‹</button>
+                            <button class="carousel-nav next">›</button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
                     <span class="unit-badge">Salud y Bienestar</span>
                     <h3>Salud y Bienestar Integral</h3>
                     <p>Atención multidisciplinaria, artes marciales inclusivas y programas de formación personal.</p>
@@ -835,19 +1003,61 @@
             </div>
             <div class="orgs-grid">
                 <div class="org-card" id="fundacion">
-                    <img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/FB_IMG_1774811894923.jpg" alt="Fundación El Mundo de Amalia" class="org-img">
+                    <div class="carousel-section" data-carousel="org-fundacion">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/FB_IMG_1774811894923.jpg" alt="Fundación 1"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/IMG-20260425-WA0069.jpg" alt="Fundación 2"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/IMG_20260227_192903.jpg" alt="Fundación 3"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/FB_IMG_1774811884123.jpg" alt="Fundación 4"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/FB_IMG_1774811864656.jpg" alt="Fundación 5"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/FB_IMG_1774804866775.jpg" alt="Fundación 6"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/FB_IMG_1775279115401.jpg" alt="Fundación 7"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Fundación El mundo de Amalia/Screenshot_2026-03-16-09-40-45-847_com.instagram.android-edit.jpg" alt="Fundación 8"></div>
+                            </div>
+                            <button class="carousel-nav prev">‹</button>
+                            <button class="carousel-nav next">›</button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
                     <h3>Fundación El Mundo de Amalia</h3>
                     <p>Apoyo terapéutico para niños y jóvenes neurodivergentes y sus familias.</p>
                     <a href="#contacto" class="btn btn-ghost">Conocer más</a>
                 </div>
                 <div class="org-card">
-                    <img src="../imagenes/Equipo y Actividades/Club Deportivo y de Bienestar AyT/IMG_20260403_132454.jpg" alt="Club Deportivo AyT" class="org-img">
+                    <div class="carousel-section" data-carousel="org-club">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Club Deportivo y de Bienestar AyT/IMG_20260403_132454.jpg" alt="Club 1"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Club Deportivo y de Bienestar AyT/IMG_20260403_132454.jpg" alt="Club 2"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Club Deportivo y de Bienestar AyT/IMG-20260330-WA0296.jpg" alt="Club 3"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Club Deportivo y de Bienestar AyT/IMG-20260330-WA0292.jpg" alt="Club 4"></div>
+                            </div>
+                            <button class="carousel-nav prev">‹</button>
+                            <button class="carousel-nav next">›</button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
                     <h3>Club Deportivo AyT</h3>
                     <p>Programas deportivos inclusivos, artes marciales y bienestar comunitario.</p>
                     <a href="#contacto" class="btn btn-ghost">Inscribirse</a>
                 </div>
                 <div class="org-card">
-                    <img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/FB_IMG_1775279361425.jpg" alt="FENAMDI Chile" class="org-img">
+                    <div class="carousel-section" data-carousel="org-fenamdi">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/FB_IMG_1775279361425.jpg" alt="FENAMDI 1"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG-20260426-WA0122.jpg" alt="FENAMDI 2"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG_20260422_185349.jpg" alt="FENAMDI 3"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG-20260426-WA0165.jpg" alt="FENAMDI 4"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/FB_IMG_1773632719964.jpg" alt="FENAMDI 5"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG_20260328_090610.jpg" alt="FENAMDI 6"></div>
+                            </div>
+                            <button class="carousel-nav prev">‹</button>
+                            <button class="carousel-nav next">›</button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
                     <h3>FENAMDI Chile</h3>
                     <p>Federación Nacional de Artes Marciales y Deportes Inclusivos.</p>
                     <a href="#contacto" class="btn btn-ghost">Registrar Instructor</a>
@@ -862,13 +1072,76 @@
                 <h2>Nuestro Equipo</h2>
                 <p>Profesionales especializados al servicio de tu bienestar</p>
             </div>
-            <div class="team-grid">
+<div class="team-grid">
                 <div class="team-card">
-                    <img src="../imagenes/Equipo y Actividades/Salud 360/IMG_20260422_185406.jpg" alt="Sebastián Atal" class="team-img">
+                    <div class="carousel-section" data-carousel="team-sebastian">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/69bf5f13-5889-4b65-a5de-2f863e1e7b79.jpeg" alt="Sebastián 1"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Ingenieria y Construcción/FB_IMG_1773182698260.jpg" alt="Sebastián 2"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG-20260426-WA0122.jpg" alt="Sebastián 3"></div>
+                            </div>
+                            <button class="carousel-nav prev">‹</button>
+                            <button class="carousel-nav next">›</button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
                     <h4>Sebastián Atal</h4>
                     <p class="role">Director General</p>
                     <p class="credentials">Constructor Civil PUC<br>SABOMNIM 4º Dan<br>Coach WKF</p>
                 </div>
+                <div class="team-card">
+                    <div class="carousel-section" data-carousel="team-kinesiologia">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0349.jpg" alt="Kinesiología 1"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/IMG_20260423_185406.jpg" alt="Kinesiología 2"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG_20260328_090610.jpg" alt="Kinesiología 3"></div>
+                            </div>
+                            <button class="carousel-nav prev">‹</button>
+                            <button class="carousel-nav next">›</button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+                    <h4>Kinesiólogo/a</h4>
+                    <p class="role">Kinesiología</p>
+                    <p class="credentials">Biomecánica<br>Rehabilitación</p>
+                </div>
+                <div class="team-card">
+                    <div class="carousel-section" data-carousel="team-nutricion">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0357.jpg" alt="Nutrición 1"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0346.jpg" alt="Nutrición 2"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG_20260407_204711.jpg" alt="Nutrición 3"></div>
+                            </div>
+                            <button class="carousel-nav prev">‹</button>
+                            <button class="carousel-nav next">›</button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+                    <h4>Nutricionista</h4>
+                    <p class="role">Nutrición</p>
+                    <p class="credentials">Nutrición Deportiva<br>Nutrición Clínica</p>
+                </div>
+                <div class="team-card">
+                    <div class="carousel-section" data-carousel="team-psicologia">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0362.jpg" alt="Psicología 1"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/Salud 360/69bf5f13-5889-4b65-a5de-2f863e1e7b79.jpeg" alt="Psicología 2"></div>
+                                <div class="carousel-slide"><img src="../imagenes/Equipo y Actividades/WMDK 🇰🇷Fushichou 🇯🇵FENAMDI 🇨🇱/IMG_20260307_115502.jpg" alt="Psicología 3"></div>
+                            </div>
+                            <button class="carousel-nav prev">‹</button>
+                            <button class="carousel-nav next">›</button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+                    <h4>Psicólogo/a</h4>
+                    <p class="role">Psicología</p>
+                    <p class="credentials">Psicología del Deporte<br>Coaching</p>
+                </div>
+            </div>
                 <div class="team-card">
                     <img src="../imagenes/Equipo y Actividades/Salud 360/IMG-20260422-WA0349.jpg" alt="Equipo de Salud" class="team-img">
                     <h4>Kinesióloga</h4>
@@ -1001,6 +1274,89 @@
             menu.classList.toggle('show');
             toggle.classList.toggle('active');
         }
+
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousels = document.querySelectorAll('.carousel-section');
+
+            carousels.forEach(carousel => {
+                const track = carousel.querySelector('.carousel-track');
+                const slides = carousel.querySelectorAll('.carousel-slide');
+                const prevBtn = carousel.querySelector('.carousel-nav.prev');
+                const nextBtn = carousel.querySelector('.carousel-nav.next');
+                const dotsContainer = carousel.querySelector('.carousel-dots');
+
+                let currentIndex = 0;
+                let autoPlayInterval;
+                const totalSlides = slides.length;
+
+                // Create dots
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('carousel-dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                }
+
+                const dots = carousel.querySelectorAll('.carousel-dot');
+
+                function updateCarousel() {
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                function goToSlide(index) {
+                    currentIndex = index;
+                    updateCarousel();
+                    resetAutoPlay();
+                }
+
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateCarousel();
+                }
+
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateCarousel();
+                }
+
+                function startAutoPlay() {
+                    autoPlayInterval = setInterval(nextSlide, 5000);
+                }
+
+                function resetAutoPlay() {
+                    clearInterval(autoPlayInterval);
+                    startAutoPlay();
+                }
+
+                // Event listeners
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetAutoPlay();
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    resetAutoPlay();
+                });
+
+                // Pause on hover
+                carousel.addEventListener('mouseenter', () => {
+                    clearInterval(autoPlayInterval);
+                });
+
+                carousel.addEventListener('mouseleave', () => {
+                    startAutoPlay();
+                });
+
+                // Start auto play
+                startAutoPlay();
+            });
+        });
     </script>
 </body>
 </html>
