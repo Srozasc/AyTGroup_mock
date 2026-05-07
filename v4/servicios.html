@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - AyT Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Ay</span>T Group</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html" class="active">Servicios</a></li>
+                <li><a href="membresias.html">Membresías</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Nuestros Servicios</h1>
+            <p>Soluciones integrales en ingeniería, deporte y salud para ti y tu familia</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>I. AyT Ingeniería y Proyectos</h2>
+                <p>Enfoque en seguridad y normativa - Construye con confianza</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <h3>Regularizaciones Municipales (DOM)</h3>
+                    <p>Tramitación completa de permisos y regularizaciones bajo la Ley del Mono y Ley de Copropiedad.</p>
+                    <ul>
+                        <li>Gestión ante DOM</li>
+                        <li>Certificación de habitabilidad</li>
+                        <li>Regularización de propiedades</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
+                    </div>
+                    <h3>Proyectos de Edificación y Remodelación</h3>
+                    <p>Diseño y ejecución de proyectos de construcción, ampliación y remodelación.</p>
+                    <ul>
+                        <li>Diseño arquitectónico</li>
+                        <li>Dirección de obras</li>
+                        <li>Remodelaciones integrales</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V9h8v2zm0-4h-8V5h8v2z"/></svg>
+                    </div>
+                    <h3>Mantención Técnica de Comunidades</h3>
+                    <p>Servicios de mantenimiento técnico para comunidades y edificios residenciales.</p>
+                    <ul>
+                        <li>Inspecciones técnicas</li>
+                        <li>Mantenimiento preventivo</li>
+                        <li>Gestión de obras comunitarias</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="contacto.html" class="btn btn-primary">Solicitar Cotización</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="background: var(--cream);">
+        <div class="container">
+            <div class="section-header">
+                <h2>II. Club Deportivo y Bienestar AyT</h2>
+                <p>Enfoque en inclusión y formación - Artes marciales para todos</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon green">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>Programa Inclusivo World Moo Duk Kwan</h3>
+                    <p>Aplicación de la tradición coreana con validez global para personas con neurodivergencia y discapacidad.</p>
+                    <ul>
+                        <li>Adaptaciones personalizadas</li>
+                        <li>Certificación internacional</li>
+                        <li>Instructores especializados</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon green">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <h3>Neurodiversidad</h3>
+                    <p>Alianza con Fundación El Mundo de Amalia para programas específicos para TEA y TDAH.</p>
+                    <ul>
+                        <li>Apoyo terapeútico</li>
+                        <li>Entorno seguro</li>
+                        <li>Familias integradas</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon green">
+                        <svg viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>
+                    </div>
+                    <h3>Defensa Personal Terapéutica</h3>
+                    <p>Programas en diversas comunas y con comunidades terapéuticas de adicciones.</p>
+                    <ul>
+                        <li>Quilicura, Huechuraba</li>
+                        <li>Padre Hurtado, San Miguel</li>
+                        <li>Comunidad Nueva Esperanza</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="membresias.html" class="btn btn-accent">Ver Planes Deportivos</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>III. Salud Integral 360°</h2>
+                <p>Enfoque multidisciplinar - Fit Balance para tu bienestar completo</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon green">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+                    </div>
+                    <h3>Kinesiología y Biomecánica</h3>
+                    <p>Evaluación y tratamiento de lesiones, mejora del rendimiento físico y prevención.</p>
+                    <ul>
+                        <li>Evaluación postural</li>
+                        <li>Rehabilitación de lesiones</li>
+                        <li>Mejora de rendimiento</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon green">
+                        <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05l-5 2v9h-.03l-1.14-.14c-.52-.06-1.01.27-1.17.77l-.45 1.42H7l-1.41 4.19 3.66 3.2 1.59-3.54h3.14l1.14 3.26zM1 21.99h15v-2H1v2zM8 8h2v8H8zm4-3h2v11h-2z"/></svg>
+                    </div>
+                    <h3>Nutrición Deportiva y Clínica</h3>
+                    <p>Planificación nutricional personalizada para atletas y personas con necesidades específicas.</p>
+                    <ul>
+                        <li>Planes nutricionales</li>
+                        <li>Suplementación deportiva</li>
+                        <li>Asesoría clínica</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon green">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                    </div>
+                    <h3>Psicología del Deporte y Coaching</h3>
+                    <p>Acompañamiento psicológico para atletas, familias y coaching de vida personal.</p>
+                    <ul>
+                        <li>Preparación mental</li>
+                        <li>Coaching personal</li>
+                        <li>Apoyo familiar</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="membresias.html" class="btn btn-accent">Ver Planes de Salud</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Necesitas más información?</h2>
+            <p>Contáctanos para resolver tus dudas y encontrar la mejor solución para ti.</p>
+            <a href="contacto.html" class="btn btn-white">Contáctanos</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>AyT Group</h3>
+                    <p>"Ingeniería que construye hogares, Bienestar que transforma vidas."</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="servicios.html">Ingeniería</a></li>
+                        <li><a href="servicios.html">Club Deportivo</a></li>
+                        <li><a href="servicios.html">Salud 360°</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="contacto.html">Escríbenos</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AyT Group. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

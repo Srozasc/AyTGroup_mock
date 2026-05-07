@@ -7,747 +7,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --blue-navy: #1a3a5c;
-            --blue-navy-dark: #0f2340;
-            --green-olive: #5c6b3d;
-            --green-olive-light: #7a8f54;
-            --white: #ffffff;
-            --cream: #f5f7fa;
-            --text-primary: #1a1a1a;
-            --text-secondary: #3d3d3d;
-            --text-muted: #6b6b6b;
-            --border-light: #e5e5e5;
-            --shadow-subtle: rgba(0,0,0,0.08);
-            --shadow-medium: rgba(0,0,0,0.12);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 16px;
-            line-height: 1.65;
-            color: var(--text-secondary);
-            background-color: var(--white);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Navigation */
-        .navbar {
-            background: var(--white);
-            box-shadow: 0 1px 3px var(--shadow-subtle);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--blue-navy);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo span {
-            color: var(--green-olive);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--blue-navy);
-        }
-
-        /* Buttons */
-        .btn {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            padding: 14px 28px;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: var(--blue-navy);
-            color: var(--white);
-            border: 2px solid var(--blue-navy);
-        }
-
-        .btn-primary:hover {
-            background: var(--blue-navy-dark);
-            border-color: var(--blue-navy-dark);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--blue-navy);
-            border: 2px solid var(--blue-navy);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(26, 58, 92, 0.1);
-        }
-
-        .btn-accent {
-            background: var(--green-olive);
-            color: var(--white);
-            border: 2px solid var(--green-olive);
-        }
-
-        .btn-accent:hover {
-            background: #4a562e;
-            border-color: #4a562e;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            min-height: 90vh;
-            background: linear-gradient(135deg, var(--blue-navy) 0%, var(--blue-navy-dark) 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></svg>') repeat;
-            opacity: 0.5;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: 56px;
-            font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -1px;
-            color: var(--white);
-            margin-bottom: 24px;
-        }
-
-        .hero-content .slogan {
-            font-size: 20px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 32px;
-            font-weight: 400;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .hero-buttons .btn {
-            padding: 16px 32px;
-        }
-
-        .hero-buttons .btn-primary {
-            background: var(--white);
-            color: var(--blue-navy);
-            border-color: var(--white);
-        }
-
-        .hero-buttons .btn-primary:hover {
-            background: var(--cream);
-        }
-
-        .hero-buttons .btn-secondary {
-            border-color: var(--white);
-            color: var(--white);
-        }
-
-        .hero-buttons .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        .about {
-            background: var(--cream);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px var(--shadow-subtle);
-        }
-
-        .about-image::after {
-            content: '';
-            position: absolute;
-            top: 24px;
-            left: 24px;
-            right: -24px;
-            bottom: -24px;
-            border: 3px solid var(--green-olive);
-            border-radius: 12px;
-            z-index: -1;
-        }
-
-        .about-content h2 {
-            font-size: 32px;
-            margin-bottom: 16px;
-        }
-
-        .about-content .subtitle {
-            font-size: 18px;
-            color: var(--blue-navy);
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        .credentials {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 24px;
-        }
-
-        .credential-badge {
-            background: var(--white);
-            border: 1px solid var(--border-light);
-            padding: 8px 16px;
-            border-radius: 9999px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-muted);
-        }
-
-        /* Services Section */
-        .services {
-            background: var(--white);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: 32px;
-            box-shadow: 0 2px 8px var(--shadow-subtle);
-            transition: all 0.3s;
-        }
-
-        .service-card:hover {
-            box-shadow: 0 4px 16px var(--shadow-medium);
-            transform: translateY(-4px);
-        }
-
-        .service-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--blue-navy);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .service-icon.green {
-            background: var(--green-olive);
-        }
-
-        .service-icon svg {
-            width: 32px;
-            height: 32px;
-            fill: var(--white);
-        }
-
-        .service-card h3 {
-            font-size: 22px;
-            margin-bottom: 16px;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .service-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-card li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border-light);
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .service-card li:last-child {
-            border-bottom: none;
-        }
-
-        /* Program Section */
-        .program {
-            background: var(--blue-navy);
-            color: var(--white);
-        }
-
-        .program h2 {
-            color: var(--white);
-        }
-
-        .program p {
-            color: rgba(255,255,255,0.8);
-        }
-
-        .program-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 48px;
-            margin-top: 48px;
-        }
-
-        .program-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 32px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .program-card h3 {
-            color: var(--white);
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-
-        .program-card p {
-            font-size: 15px;
-            margin-bottom: 20px;
-        }
-
-        .program-logos {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .program-logo {
-            width: 48px;
-            height: 48px;
-            background: var(--white);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            background: var(--cream);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .pricing-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 32px;
-            text-align: center;
-            box-shadow: 0 2px 8px var(--shadow-subtle);
-            border: 1px solid var(--border-light);
-            transition: all 0.3s;
-        }
-
-        .pricing-card:hover {
-            box-shadow: 0 8px 24px var(--shadow-medium);
-            transform: translateY(-4px);
-        }
-
-        .pricing-card.featured {
-            border-color: var(--blue-navy);
-            position: relative;
-        }
-
-        .pricing-card.featured::before {
-            content: 'Más Popular';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--blue-navy);
-            color: var(--white);
-            padding: 4px 16px;
-            border-radius: 9999px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .pricing-card h3 {
-            font-size: 20px;
-            margin-bottom: 16px;
-        }
-
-        .pricing-card .price {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--blue-navy);
-            margin-bottom: 8px;
-        }
-
-        .pricing-card .price span {
-            font-size: 16px;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        .pricing-card ul {
-            list-style: none;
-            margin: 24px 0;
-            padding: 0;
-        }
-
-        .pricing-card li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-light);
-            font-size: 14px;
-        }
-
-        .pricing-card li:last-child {
-            border-bottom: none;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: var(--white);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .testimonial-card {
-            background: var(--cream);
-            border-radius: 12px;
-            padding: 32px;
-        }
-
-        .testimonial-card p {
-            font-size: 16px;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .testimonial-author img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .testimonial-author h4 {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .testimonial-author span {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--green-olive) 0%, #4a562e 100%);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            color: var(--white);
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            color: rgba(255,255,255,0.9);
-            font-size: 18px;
-            margin-bottom: 32px;
-        }
-
-        .cta-section .btn {
-            background: var(--white);
-            color: var(--green-olive);
-            border-color: var(--white);
-        }
-
-        .cta-section .btn:hover {
-            background: var(--cream);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--blue-navy-dark);
-            color: var(--white);
-            padding: 64px 0 32px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-
-        .footer-brand h3 {
-            color: var(--white);
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-
-        .footer-brand p {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-            margin-bottom: 24px;
-        }
-
-        .footer-links h4 {
-            color: var(--white);
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 32px;
-            text-align: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 14px;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 36px;
-            }
-
-            section {
-                padding: 48px 0;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .program-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">
-                <span>Ay</span>T Group
-            </div>
+            <a href="index.html" class="logo"><span>Ay</span>T Group</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#membresias">Membresías</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="membresias.html">Membresías</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero" id="inicio">
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1>Ingeniería que construye hogares, Bienestar que transforma vidas.</h1>
                 <p class="slogan">Descubre el ecosistema integral de AyT Group: Ingeniería, Salud e Inclusión Marcial</p>
                 <div class="hero-buttons">
-                    <a href="#contacto" class="btn btn-primary">Cotizar Proyecto de Ingeniería</a>
-                    <a href="#contacto" class="btn btn-secondary">Inscripción Club Deportivo</a>
+                    <a href="contacto.html" class="btn btn-white">Cotizar Proyecto de Ingeniería</a>
+                    <a href="membresias.html" class="btn btn-secondary" style="border-color: white; color: white;">Inscripción Club Deportivo</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -756,7 +44,7 @@
         </div>
     </section>
 
-    <section class="about" id="nosotros">
+    <section class="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
@@ -772,6 +60,7 @@
                         <span class="credential-badge">🏗️ Constructor Civil PUC</span>
                         <span class="credential-badge">💜 Fundador Fundación El Mundo de Amalia</span>
                     </div>
+                    <a href="nosotros.html" class="btn btn-primary" style="margin-top: 24px;">Conocer Más</a>
                 </div>
             </div>
         </div>
@@ -795,6 +84,7 @@
                         <li>Proyectos de Edificación y Remodelación</li>
                         <li>Mantención Técnica de Comunidades</li>
                     </ul>
+                    <a href="servicios.html" class="btn btn-secondary" style="margin-top: 16px;">Ver Más</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon green">
@@ -807,6 +97,7 @@
                         <li>Alianza con Fundación El Mundo de Amalia</li>
                         <li>Defensa Personal Terapéutica</li>
                     </ul>
+                    <a href="servicios.html" class="btn btn-secondary" style="margin-top: 16px;">Ver Más</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon green">
@@ -819,6 +110,7 @@
                         <li>Nutrición Deportiva y Clínica</li>
                         <li>Psicología del Deporte y Coaching</li>
                     </ul>
+                    <a href="servicios.html" class="btn btn-secondary" style="margin-top: 16px;">Ver Más</a>
                 </div>
             </div>
         </div>
@@ -842,65 +134,12 @@
                 </div>
                 <div class="program-card">
                     <h3>Objetivos</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 8px 0;">✓ Certificación de instructores</li>
-                        <li style="padding: 8px 0;">✓ Estandarización técnica</li>
-                        <li style="padding: 8px 0;">✓ Circuito nacional de competencia adaptada</li>
-                    </ul>
-                    <a href="#contacto" class="btn btn-secondary" style="margin-top: 16px;">Registro Nacional Instructores</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing" id="membresias">
-        <div class="container">
-            <div class="section-header">
-                <h2>Planes y Membresías</h2>
-                <p>Elige el plan que mejor se adapte a tus necesidades</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Plan Formativo/Inclusivo</h3>
-                    <div class="price">$45.000<span>/mes</span></div>
                     <ul>
-                        <li>Programa Inclusivo WMDK</li>
-                        <li>Adaptaciones personalizadas</li>
-                        <li>Apoyo terapéutico</li>
-                        <li>Comunidad de apoyo</li>
+                        <li>Certificación de instructores</li>
+                        <li>Estandarización técnica</li>
+                        <li>Circuito nacional de competencia adaptada</li>
                     </ul>
-                    <a href="#contacto" class="btn btn-secondary">Inscribirse</a>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>Plan Adultos</h3>
-                    <div class="price">$55.000<span>/mes</span></div>
-                    <ul>
-                        <li>Karate / Soo Bahk Do</li>
-                        <li>Clases grupales</li>
-                        <li>Preparación física</li>
-                        <li>Competencias oficiales</li>
-                    </ul>
-                    <a href="#contacto" class="btn btn-primary">Inscribirse</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Pack Bienestar 360°</h3>
-                    <div class="price">$110.000<span>/mes</span></div>
-                    <ul>
-                        <li>Arte Marcial + Salud</li>
-                        <li>3 sesiones deportivas</li>
-                    </ul>
-                    <a href="#contacto" class="btn btn-accent">Inscribirse</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Consultas Salud</h3>
-                    <div class="price">$35.000<span>/sesión</span></div>
-                    <ul>
-                        <li>Kinesiología</li>
-                        <li>Nutrición</li>
-                        <li>Psicología</li>
-                        <li>Entrenamiento Personal</li>
-                    </ul>
-                    <a href="#contacto" class="btn btn-secondary">Reservar</a>
+                    <a href="contacto.html" class="btn btn-secondary" style="margin-top: 16px; border-color: white; color: white;">Registro Nacional Instructores</a>
                 </div>
             </div>
         </div>
@@ -910,11 +149,11 @@
         <div class="container">
             <h2>¿Listo para transformar tu vida?</h2>
             <p>Contáctanos hoy y descubre cómo AyT Group puede ayudarte a alcanzar tus metas.</p>
-            <a href="#contacto" class="btn">Contáctanos</a>
+            <a href="contacto.html" class="btn btn-white">Contáctanos</a>
         </div>
     </section>
 
-    <footer id="contacto">
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
@@ -929,10 +168,10 @@
                 <div class="footer-links">
                     <h4>Servicios</h4>
                     <ul>
-                        <li><a href="#">Ingeniería</a></li>
-                        <li><a href="#">Club Deportivo</a></li>
-                        <li><a href="#">Salud 360°</a></li>
-                        <li><a href="#">FENAMDI</a></li>
+                        <li><a href="servicios.html">Ingeniería</a></li>
+                        <li><a href="servicios.html">Club Deportivo</a></li>
+                        <li><a href="servicios.html">Salud 360°</a></li>
+                        <li><a href="index.html">FENAMDI</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -941,7 +180,7 @@
                         <li><a href="#">WhatsApp</a></li>
                         <li><a href="#">Instagram</a></li>
                         <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Correo</a></li>
+                        <li><a href="contacto.html">Correo</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -958,5 +197,11 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
